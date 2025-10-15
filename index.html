@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PPTSL</title>
+    <title>Natureza vs. Poluição</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">  <!-- A letra Orbitron é bem boa. Se vocêss tiverem uma melhor pode falar -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="img/icon.png">
 </head>
 <body>
 
     <main class="game-container">
         <header class="main-header">
-            <h1>PPTSL</h1>
-            <p>Pedra, Papel, Tesoura, Spock, Lagarto</p>
+            <h1>Natureza vs. Poluição</h1>
         </header>
 
         <section class="scoreboard">
@@ -30,42 +28,34 @@
         </section>
 
         <section class="interface">
-            <div class="player-controls">
-                <h3>Jogadas</h3>
-                <div id="player-choices">
-                    <button id="rock" title="Pedra">✊</button>
-                    <button id="paper" title="Papel">✋</button>
-                    <button id="scissors" title="Tesoura">✌️</button>
-                    <button id="lizard" title="Lagarto">🦎</button>
-                    <button id="spock" title="Spock">🖖</button>
-                </div>
-            </div>
-            <div class="computer-display">
-                 <h3>Máquina</h3>
-                 <div class="computer-choice-output">
-                    <span id="computer-choice">?</span>
-                 </div>
+            <h3>Escolhas</h3>
+            <div id="player-choices">
+                <button id="pedra" title="Pedra">🪨</button>
+                <button id="alga" title="Alga">🌿</button>
+                <button id="caranguejo" title="Caranguejo">🦀</button>
+                <button id="peixe" title="Peixe">🐠</button>
+                <button id="saco" title="Saco Plástico">🛍️</button>
+                <button id="garrafa" title="Garrafa">🍾</button>
+                <button id="rede" title="Rede">🕸️</button>
             </div>
         </section>
 
         <section class="result-display">
-            <p id="result-text">Você tem que escolher uma jogada...</p>
+            <p id="result-text">Clique para jogar</p>
         </section>
 
         <footer class="rules-container">
             <h3>Regras</h3>
             <div class="rules-grid">
-                <p><span>✂️</span> > <span>📄</span></p>
-                <p><span>📄</span> > <span>🪨</span></p>
-                <p><span>🪨</span> > <span>🦎</span></p>
-                <p><span>🦎</span> > <span>🖖</span></p>
-                <p><span>🖖</span> > <span>✂️</span></p>
-                <p><span>✂️</span> > <span>🦎</span></p>
-                <p><span>🦎</span> > <span>📄</span></p>
-                <p><span>📄</span> > <span>🖖</span></p>
-                <p><span>🖖</span> > <span>🪨</span></p>
-                <p><span>🪨</span> > <span>✂️</span></p>
+                <p data-choice="pedra">🪨</p>
+                <p data-choice="alga">🌿</p>
+                <p data-choice="caranguejo">🦀</p>
+                <p data-choice="peixe">🐠</p>
+                <p data-choice="saco">🛍️</p>
+                <p data-choice="garrafa">🍾</p>
+                <p data-choice="rede">🕸️</p>
             </div>
+            <p id="rules-tooltip">Passe o mouse sobre um ícone para ver o que ele faz...</p>
         </footer>
     </main>
 

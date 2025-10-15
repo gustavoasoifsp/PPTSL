@@ -1,11 +1,12 @@
+/* ---- Paleta de Cores e Configurações (Tema Água Natural) ---- */
 :root {
-    --light-gray: #1d2b3a;
-    --dark-gray: #121a23;
-    --blue-gray: rgba(44, 62, 80, 0.4);
-    --blue: #5d99c6;
-    --light-blue: #7db8e3;
-    --text-color: #ffffff; /* Por algum motivo não dá pra colocar white */
-    --light-blue-gray: rgba(93, 153, 198, 0.5);
+    --bg-gradient-top: #89CFF0;
+    --bg-gradient-bottom: #005C97;
+    --container-bg: rgba(255, 255, 255, 0.15);
+    --text-color: #FFFFFF;
+    --shadow-color: rgba(10, 30, 60, 0.2);
+    --button-bg: rgba(255, 255, 255, 0.2);
+    --button-hover-bg: rgba(255, 255, 255, 0.4);
 }
 
 * {
@@ -15,8 +16,8 @@
 }
 
 body {
-    font-family: 'Orbitron', sans-serif;
-    background: linear-gradient(135deg, var(--light-gray), var(--dark-gray));
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(170deg, var(--bg-gradient-top), var(--bg-gradient-bottom));
     color: var(--text-color);
     display: flex;
     justify-content: center;
@@ -25,62 +26,53 @@ body {
     padding: 20px;
 }
 
-/* ---- Container Principal (Cinza claro) ---- */
+/* ---- Container Principal ---- */
 .game-container {
     width: 100%;
-    max-width: 800px;
-    background: var(--blue-gray);
-    border: 1px solid var(--light-blue-gray);
-    border-radius: 16px;
-    padding: 2.5rem;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    max-width: 750px; /* Um pouco maior para os 7 botões */
+    background: var(--container-bg);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px 0 var(--shadow-color);
     backdrop-filter: blur(10px);
 }
 
-/* ---- Cabeçalho e Títulos ---- */
 .main-header {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 .main-header h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 0 5px rgba(93, 153, 198, 0.3);
+    font-size: 2.2rem;
+    text-shadow: 0 2px 4px var(--shadow-color);
 }
 
 .main-header p {
-    font-size: 0.9rem;
-    color: var(--blue);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 1rem;
+    opacity: 0.9;
 }
 
 h3 {
-    font-weight: 400;
-    margin-bottom: 1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
     text-align: center;
-    color: var(--text-color);
+    font-size: 1.2rem;
 }
 
 /* ---- Placar ---- */
 .scoreboard {
     display: flex;
     justify-content: space-around;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
     padding: 1rem;
-    margin-bottom: 2.5rem;
-}
-
-.score-panel {
-    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .score-panel h2 {
     font-size: 0.9rem;
-    color: var(--blue);
+    font-weight: 400;
     margin-bottom: 0.5rem;
 }
 
@@ -89,53 +81,35 @@ h3 {
     font-weight: 700;
 }
 
-/* ---- Área de Interação ---- */
-.interface {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 2.5rem;
-}
-
-.player-controls, .computer-display {
-    flex: 1;
-    text-align: center;
-}
-
+/* ---- Área de Botões ---- */
 #player-choices {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.8rem; /* Espaçamento menor para caber tudo */
+    margin-bottom: 2rem;
 }
 
-#player-choices button, .computer-choice-output {
-    background: transparent;
-    border: 2px solid var(--light-blue-gray);
-    border-radius: 12px;
-    width: 75px;
-    height: 75px;
+#player-choices button {
+    background: var(--button-bg);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    width: 80px;
+    height: 80px;
     font-size: 2.5rem;
     color: var(--text-color);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease-in-out;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 4px 15px var(--shadow-color);
 }
 
 #player-choices button:hover {
-    background: linear-gradient(145deg, var(--light-blue), var(--blue));
-    border-color: var(--light-blue);
+    background: var(--button-hover-bg);
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(93, 153, 198, 0.2);
-}
-
-.computer-choice-output {
-    margin: 0 auto;
-    cursor: default;
-    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 20px var(--shadow-color);
 }
 
 /* ---- Resultado e Regras ---- */
@@ -143,30 +117,40 @@ h3 {
     text-align: center;
     font-size: 1.2rem;
     font-weight: 700;
-    min-height: 40px;
-    color: var(--light-blue);
+    min-height: 50px;
+    padding: 0 1rem;
 }
 
 .rules-container {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     padding-top: 1.5rem;
-    border-top: 1px solid var(--light-blue-gray);
-}
-
-.rules-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 0.5rem;
-    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
     text-align: center;
 }
 
-.rules-grid p {
-    background: rgba(0, 0, 0, 0.2);
-    padding: 0.5rem;
-    border-radius: 5px;
+.rules-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
-.rules-grid span {
-    font-size: 1.1rem;
+.rules-grid p {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.2s;
+}
+
+.rules-grid p:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#rules-tooltip {
+    font-size: 1rem;
+    font-weight: 700;
+    min-height: 25px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out;
 }
